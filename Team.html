@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>加入我们 - Alex 技术</title>
+    <style>
+        body {
+            display: flex;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        nav {
+            width: 200px;
+            background-color: #34495e;
+            color: #ecf0f1;
+            height: 40vh;
+            padding: 20px;
+        }
+        nav h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        nav a {
+            display: block;
+            color: #ecf0f1;
+            text-decoration: none;
+            margin: 10px 0;
+        }
+        .main {
+            flex: 1;
+            padding: 40px;
+            background-color: #ecf0f1;
+        }
+        .job-card {
+            background-color: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .job-card h2 {
+            margin-top: 0;
+        }
+        .job-card table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .job-card th, .job-card td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        .apply-button {
+            padding: 10px 20px;
+            background-color: #2980b9;
+            border: none;
+            border-radius: 6px;
+            color: white;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <h1>Alex 技术</h1>
+        <a href="/home">首页</a>
+        <a href="/Alext">我的账户</a>
+        <a href="/go">产品介绍</a>
+        <a href="/buy_vip">购买 VIP</a>
+        <a href="/Team">加入我们</a>
+    </nav>
+    <div class="main">
+        <div class="job-card">
+            <h2>加入我们</h2>
+            <p>成为 Alex 技术的一员，共同打造顶尖科技产品！</p>
+            <table>
+                <tr>
+                    <th>职位</th>
+                    <th>职责</th>
+                    <th>要求</th>
+                    <th>薪资</th>
+                </tr>
+                <tr>
+                    <td>Python 后端开发</td>
+                    <td>开发与维护后端接口</td>
+                    <td>熟悉 Flask/Django，有项目经验</td>
+                    <td>¥15,000-25,000/月</td>
+                </tr>
+                <tr>
+                    <td>前端开发</td>
+                    <td>负责网站前端开发与优化</td>
+                    <td>精通 HTML/CSS/JS，熟悉 React</td>
+                    <td>¥13,000-20,000/月</td>
+                </tr>
+                <tr>
+                    <td>网络安全工程师</td>
+                    <td>负责安全策略、入侵检测、防御体系建设</td>
+                    <td>掌握渗透测试、网络安全方案</td>
+                    <td>¥18,000-30,000/月</td>
+                </tr>
+            </table>
+                </select>
+            <form method="POST" action="/apply">
+    <label>申请职位：</label>
+    <select name="job_title">
+        <option value="Python 后端开发">Python 后端开发</option>
+        <option value="前端开发">前端开发</option>
+        <option value="网络安全工程师">网络安全工程师</option>
+    </select>
+    <br><br>
+    <label>姓名:</label>
+    <input type="text" name="ap_name" required>
+    <br><br>
+    <label>个人简介:</label>
+    <textarea name="ap_i" rows="10" cols="50" placeholder="简单介绍一下你自己，比如你的经验、兴趣或优势"></textarea>
+    <br><br>
+    <label>电话:<label>
+    <input name="Phone" rows="4" cols="50" placeholder ="您的电话号码"></input>
+    <br><br>
+    <button type="submit" class="apply-button">提交申请</button>
+</form>
+        </div>
+    </div>
+</body>
+</html>

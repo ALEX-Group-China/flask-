@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>申请失败 - Alex 技术</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #ff6a6a, #fbc2eb);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .card {
+            background-color: #fff;
+            padding: 40px 60px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            text-align: center;
+            animation: shake 0.5s;
+        }
+        .card h1 {
+            color: #e74c3c;
+            margin-bottom: 20px;
+            font-size: 32px;
+        }
+        .card p {
+            color: #555;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        .card a {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #e74c3c;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .card a:hover {
+            background-color: #c0392b;
+        }
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+            100% { transform: translateX(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>❌ 提交失败！</h1>
+        <p>申请信息不完整，请返回重新填写。</p>
+        <a href="/Team">返回职位页面</a>
+    </div>
+</body>
+</html>

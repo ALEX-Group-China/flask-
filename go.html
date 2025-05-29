@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>ALEX 技术公司 - 深入了解产品</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f7fa;
+            color: #333;
+        }
+        header {
+            background-color: #1e293b;
+            color: #fff;
+            padding: 1rem 2rem;
+            font-size: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .container {
+            display: flex;
+        }
+        nav {
+            width: 220px;
+            background-color: #fff;
+            padding: 1rem;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav li {
+            margin: 1rem 0;
+        }
+        nav a {
+            color: #1e293b;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        main {
+            flex: 1;
+            padding: 2rem;
+        }
+        .card {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .card img {
+            width: 100%;
+            max-height: 340px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 0.75rem;
+            text-align: left;
+        }
+        th {
+            background-color: #f0f4f8;
+        }
+        h2 {
+            margin-top: 0;
+            color: #1e293b;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    ALEX 技术公司 - 深入了解产品
+</header>
+
+<div class="container">
+    <nav>
+        <ul>
+            <li><a href="/home">主页</a></li>
+            <li><a href="/alext">账户信息</a></li>
+            <li><a href="/buy">购买</a></li>
+            <li><a href="/go">深入了解产品</a></li>
+            <li><a href="/contact">联系客服</a></li>
+            <li><a href="/buy_vip">购买VIP</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="card">
+            <h2>电视产品</h2>
+            <img src="tv.jpg" alt="电视图片">
+            <p>高清智能电视，支持 AI 画质增强，4K 分辨率，可连接PC手柄，链接游戏主机如PS系列Xbox系列</p>
+            <p><strong>材质：</strong> 金属边框 + 防刮玻璃屏幕</p>
+            <table>
+                <tr>
+                    <th>型号</th>
+                    <th>尺寸</th>
+                    <th>材质</th>
+                    <th>价格</th>
+                </tr>
+                <tr>
+                    <td>TV-A100</td>
+                    <td>55 英寸</td>
+                    <td>铝合金</td>
+                    <td>¥3999</td>
+                </tr>
+                <tr>
+                    <td>TV-B200</td>
+                    <td>65 英寸</td>
+                    <td>不锈钢</td>
+                    <td>¥5999</td>
+                </tr>
+                <tr>
+                  <td>TV-A208</td>
+                  <td>100 英才</td>
+                  <td>合金边框</td>
+                  <td>¥8900</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="card">
+            <h2>爬虫服务</h2>
+            <img src="爬虫.jpg" alt="爬虫图片">
+            <p>提供高速网站爬取、数据采集与网络维护。</p>
+            <p><strong>分类：</strong> 基础爬虫、高级爬虫、定制开发</p>
+            <table>
+                <tr>
+                    <th>服务</th>
+                    <th>功能</th>
+                    <th>价格</th>
+                </tr>
+                <tr>
+                    <td>基础爬虫</td>
+                    <td>静态网页采集</td>
+                    <td>¥999/月</td>
+                </tr>
+                <tr>
+                    <td>高级爬虫</td>
+                    <td>动态网页、JS 渲染</td>
+                    <td>¥1999/月</td>
+                </tr>
+                <tr>
+                    <td>定制开发</td>
+                    <td>专属需求定制</td>
+                    <td>¥面议</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="card">
+            <h2>网络维护</h2>
+            <img src="网络维护.jpg" alt="网络图片">
+            <p>为企业提供稳定高效的服务器维护、网络安全加固服务。</p>
+            <p><strong>分类：</strong> 服务器维护、安全防护、运维托管</p>
+            <table>
+                <tr>
+                    <th>服务</th>
+                    <th>功能</th>
+                    <th>价格</th>
+                </tr>
+                <tr>
+                    <td>服务器维护</td>
+                    <td>硬件检测、系统更新</td>
+                    <td>¥2999/月</td>
+                </tr>
+                <tr>
+                    <td>安全防护</td>
+                    <td>DDoS 防御、入侵检测</td>
+                    <td>¥4999/月</td>
+                </tr>
+                <tr>
+                    <td>运维托管</td>
+                    <td>7x24 小时监控</td>
+                    <td>¥6999/月</td>
+                </tr>
+        </div>
+            </table>
+            <table>
+                <div class="card">
+    <h2>数据化分析</h2>
+    <img src="数据分析.jpg" alt="数据分析图片">
+    <p>为企业提供精准的数据分析、商业洞察和AI预测服务。</p>
+    <p><strong>分类：</strong> 数据清洗、商业智能、AI预测</p>
+    <table>
+        <tr>
+            <th>服务</th>
+            <th>功能</th>
+            <th>价格</th>
+        </tr>
+        <tr>
+            <td>数据清洗</td>
+            <td>去重、格式化、异常值处理</td>
+            <td>¥1999/项目</td>
+        </tr>
+        <tr>
+            <td>商业智能</td>
+            <td>数据可视化、报告生成</td>
+            <td>¥3999/项目</td>
+        </tr>
+        <tr>
+            <td>AI预测</td>
+            <td>趋势预测、模型训练</td>
+            <td>¥5999/项目</td>
+        </tr>
+    </table>
+</div>
+                
+                
+            </table>
+        </div>
+    </main>
+</div>
+
+</body>
+</html>

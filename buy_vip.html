@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>购买 VIP - Alex 技术</title>
+    <style>
+        body {
+            display: flex;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        nav {
+            width: 200px;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            height: 40vh;
+            padding: 20px;
+        }
+        nav h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        nav a {
+            display: block;
+            color: #ecf0f1;
+            text-decoration: none;
+            margin: 10px 0;
+        }
+        .main {
+            flex: 1;
+            padding: 40px;
+            background-color: #ecf0f1;
+        }
+        .vip-card {
+            background-color: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .vip-card h2 {
+            margin-top: 0;
+        }
+        .vip-card ul {
+            padding-left: 20px;
+        }
+        .vip-card button {
+            padding: 10px 20px;
+            background-color: #27ae60;
+            border: none;
+            border-radius: 6px;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <h1>Alex 技术</h1>
+        <a href="/home">首页</a>
+        <a href="/Alext">我的账户</a>
+    </nav>
+    <div class="main">
+        <div class="vip-card">
+            <h2>购买 VIP</h2>
+            <p>当前等级：<strong>{{ vip_level }}</strong></p>
+            <p>尊贵的 VIP 用户可享受以下专属好处：</p>
+            <ul>
+                <li>专属服务器优先支持</li>
+                <li>定制化开发与优化服务</li>
+                <li>AI 数据分析特权</li>
+                <li>24小时一对一专属客服</li>
+                <li>未来新产品抢先体验</li>
+                <li>Alex游戏高级优惠体验</li>
+            </ul>
+                <button type="submit">联系WeChat-->OZH20100829  立即购买 VIP</button>
+        </div>
+    </div>
+</body>
+</html>

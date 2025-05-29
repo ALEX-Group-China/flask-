@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta content="width=device-width, initial-scale=1" />
+<title>Alex 公司主页</title>
+<style>
+  /* 重置与基础 */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  body {
+    background: #111;
+    color: #eee;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+  }
+  /* 左侧导航栏 */
+  nav {
+    width: 200px;
+    background: #222;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  nav a {
+    color: #ccc;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: background 0.3s;
+  }
+  nav a:hover {
+    background: #555;
+    color: #fff;
+  }
+  /* 顶部用户头像 */
+  #user-avatar {
+    position: fixed;
+    top: 20px;
+    left: 220px; /* 避开导航栏 */
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #555;
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 1100;
+    border: 2px solid #888;
+  }
+  #user-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  /* 弹窗背景 */
+  #user-popup-bg {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 1000;
+  }
+  /* 弹窗内容 */
+  #user-popup {
+    display: none;
+    position: fixed;
+    top: 75px;
+    left: 220px;
+    background: #222;
+    border-radius: 12px;
+    padding: 20px;
+    width: 240px;
+    color: #ddd;
+    z-index: 1101;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+  }
+  #user-popup h2 {
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  #user-popup .vip-level {
+    margin-top: 8px;
+    font-size: 1rem;
+    color: #999;
+  }
+  /* 主内容区 */
+  main {
+    flex: 1;
+    background: #181818;
+    padding: 40px 60px;
+    overflow-y: auto;
+  }
+  main h1 {
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: #eee;
+  }
+  /* 轮播图 */
+  .carousel {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 14px;
+    margin-bottom: 30px;
+  }
+  .carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    opacity: 0;
+    animation: slide 15s infinite;
+  }
+  .carousel img:nth-child(1) { animation-delay: 0s; }
+  .carousel img:nth-child(2) { animation-delay: 5s; }
+  .carousel img:nth-child(3) { animation-delay: 10s; }
+  @keyframes slide {
+    0% { opacity: 0; }
+    5% { opacity: 1; }
+    30% { opacity: 1; }
+    35% { opacity: 0; }
+    100% { opacity: 0; }
+  }
+  /* 热点列表 */
+  .hotspots {
+    margin-bottom: 40px;
+  }
+  .hotspots h2 {
+    margin-bottom: 12px;
+    font-weight: 700;
+    color: #eee;
+  }
+  .hotspots ul {
+    list-style: none;
+  }
+  .hotspots ul li {
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #333;
+    cursor: pointer;
+    color: #ccc;
+    transition: color 0.3s;
+  }
+  .hotspots ul li:hover {
+    color: #fff;
+  }
+  /* 产品介绍 */
+  .product-intro {
+    background: #222;
+    border-radius: 14px;
+    padding: 24px;
+    color: #ddd;
+    max-width: 700px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  .product-intro h2 {
+    margin-bottom: 12px;
+    font-weight: 700;
+  }
+  .product-intro p {
+    font-size: 1rem;
+  }
+</style>
+</head>
+<body>
+
+<!-- 用户头像 -->
+<div id="user-avatar" onclick="toggleUserPopup()">
+  <img src="https://i.pravatar.cc/48?u={{ username }}" alt="用户头像" />
+</div>
+
+<!-- 用户信息弹窗 -->
+<div id="user-popup-bg" onclick="closeUserPopup()"></div>
+<div id="user-popup" style="display:none;">
+  <h2 id="popup-username">{{ username }}</h2>
+  <div>等级: <span class="vip-level" id="popup-vip">{{ vip_level }}</span></div>
+</div>
+
+<!-- 左侧导航 -->
+<nav>
+  <a href="/buy">产品购买</a>
+  <a href="/Alext">Alex账户信息</a>
+  <a href="/go">深入了解产品</a>
+  <a href="/buy_vip">购买VIP</a>
+  <a href="/Team">加入我们团队</a>
+  <a href="/contact">联系我们WeChat</a>
+</nav>
+
+<!-- 右侧主内容 -->
+<main>
+  <section id="intro">
+    <h1>Alex 技术公司</h1>
+    <p>欢迎来到Alex技术公司，创办于2025年4月21日创办者&CEO ｜欧子航|2010｜8月29日|处女座我们专注于网络安全与爬虫技术研发，致力于帮助用户更好地理解合法爬虫技术，避免误解和非法行为。</p>
+  </section>
+
+  <section id="carousel" class="carousel">
+    <img src="https://picsum.photos/700/300?random=1" alt="轮播图1" />
+    <img src="https://picsum.photos/700/300?random=2" alt="轮播图2" />
+    <img src="https://picsum.photos/700/300?random=3" alt="轮播图3" />
+  </section>
+
+  <section id="hotspots" class="hotspots">
+    <h2>公司热点</h2>
+    <ul>
+      <li>【公告】新品爬虫API上线</li>
+      <li>【活动】五月黑客马拉松</li>
+      <li>【新闻】合作伙伴扩展</li>
+      <li>【安全】新版防御系统上线</li>
+      <li>【招聘】招募网络安全工程师</li>
+      <li>【开业】ALEX-China|GROUP|预计2026年11月21日开业</li>
+    </ul>
+  </section>
+
+  <section id="product" class="product-intro">
+    <h2>爬虫接单</h2>
+    <p>我们的爬虫产品完全合法合规，提供高效稳定的数据抓取服务，帮助企业进行数据分析、市场调研。请放心使用，避免误以为爬虫技术违法。</p>
+  </section>
+
+  <section id="product" class="product-intro">
+    <h2>网络维护</h2>
+    <p>我们的网络维护服务保障企业系统安全稳定运行，减少风险，提升效率。</p>
+  </section>
+
+  <section id="product" class="product-intro">
+    <h2>ALEX_CHAT_AI</h2>
+    <p>智能聊天机器人，帮助企业实现自动化客户服务和数据分析。</p>
+  </section>
+
+  <section id="product" class="product-intro">
+    <h2>ALEX_TV</h2>
+    <p>企业专属视频平台，提供丰富的培训与宣传内容。</p>
+  </section>
+
+  <section id="product" class="product-intro">
+    <h2>数据分析</h2>
+    <p>专业的数据分析服务，基于大量爬取数据，为企业提供有价值的市场洞察和决策支持。</p>
+  </section>
+</main>
+
+<script>
+  const userPopup = document.getElementById('user-popup');
+  const userPopupBg = document.getElementById('user-popup-bg');
+
+  function toggleUserPopup() {
+    if (userPopup.style.display === 'block') {
+      closeUserPopup();
+    } else {
+      openUserPopup();
+    }
+  }
+  function openUserPopup() {
+    userPopup.style.display = 'block';
+    userPopupBg.style.display = 'block';
+  }
+  function closeUserPopup() {
+    userPopup.style.display = 'none';
+    userPopupBg.style.display = 'none';
+  }
+  userPopup.addEventListener('click', e => e.stopPropagation());
+</script>
+
+</body>
+</html>

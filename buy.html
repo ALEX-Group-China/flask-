@@ -1,0 +1,96 @@
+<!DOCTYPE html><html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Alex购买页面</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+        .sidebar {
+            width: 220px;
+            background-color: #111827;
+            color: white;
+            padding: 20px;
+        }
+        .sidebar h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            margin: 15px 0;
+        }
+        .sidebar ul li a {
+            color: #9ca3af;
+            text-decoration: none;
+        }
+        .sidebar ul li a:hover {
+            color: white;
+        }
+        .content {
+            flex: 1;
+            padding: 40px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .card h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .buy-btn {
+            background-color: #6b7280;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+        .note {
+            margin-top: 10px;
+            color: #ef4444;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="sidebar">
+        <h2>Alex导航</h2>
+        <ul>
+            <li><a href="/home">主页</a></li>
+            <li><a href="/go">产品</a></li>
+            <li><a href="/Alext">账户</a></li>
+            <li><a href="/buy">购买</a></li>
+            <li><a href="/contact">联系WeChat</a></li>
+            <li><a href="/buy_vip">购买VIP</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="card">
+            <h1>购买页面</h1>
+            <p>感谢您对Alex的支持！目前购买功能尚未开业，敬请期待。</p><p>可够买Alex集团的VIP功能</p>
+            <button class="buy-btn" disabled>购买（未开业）</button>
+            <div class="note">提示：购买功能上线时间请关注官网公告。</div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

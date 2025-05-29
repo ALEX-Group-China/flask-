@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta content="width=device-width, initial-scale=1" />
+<title>Alex 公司</title>
+<style>
+  body { display: flex; margin: 0; font-family: sans-serif;background-image: #111; }
+  nav { width: 300px; background: #333; color: white; height: 50vh; padding: 20px; box-sizing: border-box; }
+  nav a { display: block; color: white; text-decoration: none; margin: 10px 0; }
+  nav a:hover { text-decoration: underline; }
+  main { flex: 1; padding: 20px;background-color: #111; color: white;}
+  .user-info { border: 1px solid #ccc; padding: 20px; border-radius: 10px; max-width: 300px; }
+  .user-info img { width: 100px; border-radius: 50%; }
+</style>
+</head>
+<body>
+
+<nav>
+  <h2>导航</h2>
+  <a href="/home">首页</a>
+  <a href="/Alext">Alext账户信息</a>
+  <a href="/go">深入了解产品</a>
+</nav>
+
+<main>
+    <h1>Alext 账户信息</h1>
+    <div class="user-info">
+      <img src="https://i.pravatar.cc/150?u={{ username }}" alt="用户头像" />
+      <p><strong>注册时间:</strong> {{ user_info.registered }}</p>
+      <p><strong>VIP 等级:</strong> {{ user_info.vip }}</p>
+    </div>
+  <div class="vip-card" style="border: 1px solid #ccc; padding: 15px; margin-top: 20px; border-radius: 10px; max-width: 300px;">
+  <h3 style="margin-top: 0;">升级 VIP</h3>
+  <p>尊贵的 {{ username }}，当前等级：<strong>{{ user_info.vip }} 点击导航栏---＞购买VIP可升级</strong></p>
+  <form action="/buy_vip?username={{ username }}" method="get">
+  </form>
+</div>
+<div class="vip-benefits" style="border: 1px solid #ddd; padding: 15px; margin-top: 20px; border-radius: 10px; max-width: 300px;">
+  <h3 style="margin-top: 0;">VIP</h3>
+  <ul style="padding-left: 20px; margin: 0;">
+    <li>享受尊贵标识与金色昵称</li>
+    <li>专属高速下载通道</li>
+    <li>优先获取新功能和更新</li>
+    <li>专属客服支持</li>
+    <li>特别活动与优惠</li>
+    <li>购买Alex游戏优惠</li>
+    <h6>温馨提示:早期用户注册截止2026年11月26日前注册的用户注册就是尊贵的VIP1用户！以感谢支持😃</h6>
+  </ul>
+</div>
+</main>
+
+</body>
+</html>
